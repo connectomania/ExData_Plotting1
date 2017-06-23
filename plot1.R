@@ -13,7 +13,7 @@
   # ORGANIZE DATA
   #############################################################################
   
-  library(dplyr)
+  suppressMessages(library(dplyr))
   
   skinny <- filter(bigdat, date %in% c("1/2/2007","2/2/2007")) %>% 
       mutate(datetime = paste(date, time, sep=" ")) %>%
@@ -33,5 +33,3 @@
        xlab = "Global Active Power (kilowatts)")
   
   dev.off()
-  
-  
